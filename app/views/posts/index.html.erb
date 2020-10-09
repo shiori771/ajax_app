@@ -1,7 +1,8 @@
-<h1>Top page</h1>
-<%# 新規投稿ページへのリンク %>
-<%= link_to '新規投稿', '/posts/new' %> 
-<%# 複数のデータを一つずつ表示させるため %>
+<h1>AjaxApp</h1>
+<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' , id: "submit" %>
+<% end %>
 <% @posts.each do |post| %>   
 <%# each文で＠を定義したから以下は＠をつけない %>
   <div class="post">
